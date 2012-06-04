@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+	<title>EaselJS Demo</title>
+	
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" />
+	
+	<link href="css/app-main.css"  rel="stylesheet" type="text/css" />
+	<!-- INCLUDE THIS -->
+	<link href="css/smr-imports.css" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.render.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/brite.min.js"></script>
+	<script type="text/javascript" src="js/easeljs-0.4.2.min.js"></script>
+		
+	<!-- Component JS Files -->
+	<script type="text/javascript" src="js/HelloWorld.js"></script>
+	<script type="text/javascript" src="js/AreaChart.js"></script>
+	<script type="text/javascript" src="js/LineChart.js"></script>
+	<script type="text/javascript" src="js/BarChart.js"></script>
+	<!-- /Component JS Files -->
+
+</head>
+
+<body>
+	<div id="page">
+		<div id="top">
+			<div class="navbar">
+				<div class="navbar-inner">
+      				<div class="container">
+        				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          					<span class="icon-bar"></span>
+          					<span class="icon-bar"></span>
+          					<span class="icon-bar"></span>
+       	 				</a>
+				        <a class="brand" href="./index-nextgen.html">EaselJS Demo</a>
+				        <div class="nav-collapse">
+			          		<ul class="nav">
+			          			<li class="nav-item active" data-section="HelloWorld">
+					            	<a href="#">HelloWorld</a>
+								</li>
+					            <li class="nav-item" data-section="LineChart">
+					            	<a href="#">LineChart</a>
+								</li>
+								<li class="nav-item" data-section="BarChart">
+					            	<a href="#">BarChart</a>
+								</li>
+							</ul>
+			        	</div><!-- /.nav-collapse -->
+			      	</div><!-- /container -->
+			    </div><!-- /navbar-inner -->
+			</div><!-- /navbar -->
+		</div>
+			
+		<div id="content">
+			<div id="reports-container" class='tabs-content'>
+					
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$(function(){
+				var $this = $(this);
+				brite.display("HelloWorld",{},{parent:$("#reports-container")});
+				$this.find(".nav-item").click(function(){
+					var $this = $(this);
+					var val = $this.attr("data-section");
+					
+					if(typeof val != "undefined"){
+						//remove the class sel from the others nav-item
+						$this.closest(".navbar").find("li").removeClass("active");
+						//add the class sel from the select one
+						$this.addClass("active");
+						if(val == "HelloWorld"){
+							brite.display("HelloWorld",{},{parent:$("#reports-container")});
+						}else if(val == "LineChart"){
+							brite.display("LineChart",{},{parent:$("#reports-container")});
+						}else if(val == "BarChart"){
+							brite.display("BarChart",{},{parent:$("#reports-container")});
+						}
+					}
+				});
+			});
+		</script>
+	</div>
+</body>
+</html>

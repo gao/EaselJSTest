@@ -1,0 +1,25 @@
+.LineChart {
+	margin: 8px;
+}
+.axis path{
+  fill: none;
+  stroke: #000;
+}
+
+.axis line {
+	stroke: #CDCDCD;
+	stroke-width: 0.5;
+	fill: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.dot {
+  fill: white;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
