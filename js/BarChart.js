@@ -2,8 +2,16 @@ var smr = smr || {};
 
 (function($){
 	
+	// --------- Component Private Properties --------- //
+	var canvas;
+	var stage;
+	var barPadding = 7;
+	var barValues = [];
+	var bars = [];
 	var barHeight;
 	var maxValue = 50;
+	var count;
+	// --------- /Component Private Properties --------- //
 
 	// --------- Component Interface Implementation ---------- //
 	function BarChart(){};
@@ -17,20 +25,12 @@ var smr = smr || {};
 	BarChart.prototype.postDisplay = function(data, config) {
 		var $e = this.$element;
 		var thisC = this;
-
-		var canvas;
-		var stage;
-		var barPadding = 7;
-		var count;
-		var barValues = [];
-		var bars = [];
 		
 		// create a new stage and point it at our canvas:
 		canvas = $e.find("#BarChartCanvas")[0];
 		stage = new Stage(canvas);
-
-		// generate some random data (between 4 and 10, the |0 floors (for positive numbers))
-		var numBars = Math.random()*6+4|0;
+		
+		var numBars = 6;
 		var max = 0;
 		for (var i=0; i<numBars; i++) {
 			var val = Math.random()*maxValue+1|0;
@@ -140,13 +140,30 @@ var smr = smr || {};
 			bars.push(bar);
 
 			// draw the bar with an initial value of 0:
-			drawBar(bar, barValues[i]);
+			drawBar(bar, 0);
 		}
+
+		// set up the count for animation based on the number of bars:
+		count = numBars*10;
+
+		Ticker.setInterval(50);	
+		Ticker.addListener(tick);
+	}
+	// --------- /Component Interface Implementation ---------- //
+	
+	function tick() {
+		// if we are on the last frame of animation then remove the tick listener:
+		if (--count == 1){ Ticker.removeListener(tick); }
+
+		// animate the bars in one at a time:
+		var c = bars.length*10-count;
+		var index = c/10|0;
+		var bar = bars[index];
+		drawBar(bar, (c%10+1)/10*barValues[index]);
 
 		// update the stage:
 		stage.update();
 	}
-	// --------- /Component Interface Implementation ---------- //
 	
 	function drawBar(bar, value) {
 		// calculate bar height:

@@ -21,9 +21,10 @@
 		
 	<!-- Component JS Files -->
 	<script type="text/javascript" src="js/HelloWorld.js"></script>
-	<script type="text/javascript" src="js/AreaChart.js"></script>
 	<script type="text/javascript" src="js/LineChart.js"></script>
 	<script type="text/javascript" src="js/BarChart.js"></script>
+	<script type="text/javascript" src="js/CurveToDraw.js"></script>
+	<script type="text/javascript" src="js/DragDrop.js"></script>
 	<!-- /Component JS Files -->
 
 </head>
@@ -50,6 +51,12 @@
 								</li>
 								<li class="nav-item" data-section="BarChart">
 					            	<a href="#">BarChart</a>
+								</li>
+								<li class="nav-item" data-section="Draw">
+					            	<a href="#">Draw</a>
+								</li>
+								<li class="nav-item" data-section="DragDrop">
+					            	<a href="#">DragDrop</a>
 								</li>
 							</ul>
 			        	</div><!-- /.nav-collapse -->
@@ -83,6 +90,10 @@
 							brite.display("LineChart",{},{parent:$("#reports-container")});
 						}else if(val == "BarChart"){
 							brite.display("BarChart",{},{parent:$("#reports-container")});
+						}else if(val == "Draw"){
+							brite.display("CurveToDraw",{},{parent:$("#reports-container")});
+						}else if(val == "DragDrop"){
+							brite.display("DragDrop",{},{parent:$("#reports-container")});
 						}
 					}
 				});
