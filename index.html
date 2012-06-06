@@ -25,6 +25,7 @@
 	<script type="text/javascript" src="js/BarChart.js"></script>
 	<script type="text/javascript" src="js/CurveToDraw.js"></script>
 	<script type="text/javascript" src="js/DragDrop.js"></script>
+	<script type="text/javascript" src="js/GraphicsChart.js"></script>
 	<!-- /Component JS Files -->
 
 </head>
@@ -57,6 +58,9 @@
 								</li>
 								<li class="nav-item" data-section="DragDrop">
 					            	<a href="#">DragDrop</a>
+								</li>
+								<li class="nav-item" data-section="GraphicsChart">
+					            	<a href="#">Graphics</a>
 								</li>
 							</ul>
 			        	</div><!-- /.nav-collapse -->
@@ -94,6 +98,8 @@
 							brite.display("CurveToDraw",{},{parent:$("#reports-container")});
 						}else if(val == "DragDrop"){
 							brite.display("DragDrop",{},{parent:$("#reports-container")});
+						}else if(val == "GraphicsChart"){
+							brite.display("GraphicsChart",{},{parent:$("#reports-container")});
 						}
 					}
 				});
