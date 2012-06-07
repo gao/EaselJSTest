@@ -8,16 +8,22 @@
 	
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.8.18.custom.css" type="text/css"/>
 	
 	<link href="css/app-main.css"  rel="stylesheet" type="text/css" />
 	<!-- INCLUDE THIS -->
 	<link href="css/smr-imports.css" rel="stylesheet" type="text/css" />
 	
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
 	<script type="text/javascript" src="js/jquery.render.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/brite.min.js"></script>
 	<script type="text/javascript" src="js/easeljs-0.4.2.min.js"></script>
+	<script type="text/javascript" src="js/filters/BoxBlurFilter.js"></script>
+	<script type="text/javascript" src="js/filters/ColorFilter.js"></script>
+	<script type="text/javascript" src="js/filters/ColorMatrix.js"></script>
+	<script type="text/javascript" src="js/filters/ColorMatrixFilter.js"></script>
 		
 	<!-- Component JS Files -->
 	<script type="text/javascript" src="js/HelloWorld.js"></script>
@@ -26,6 +32,9 @@
 	<script type="text/javascript" src="js/CurveToDraw.js"></script>
 	<script type="text/javascript" src="js/DragDrop.js"></script>
 	<script type="text/javascript" src="js/GraphicsChart.js"></script>
+	<script type="text/javascript" src="js/FilterChart.js"></script>
+	<script type="text/javascript" src="js/Filter2Chart.js"></script>
+	<script type="text/javascript" src="js/IconsChart.js"></script>
 	<!-- /Component JS Files -->
 
 </head>
@@ -61,6 +70,15 @@
 								</li>
 								<li class="nav-item" data-section="GraphicsChart">
 					            	<a href="#">Graphics</a>
+								</li>
+								<li class="nav-item" data-section="FilterChart">
+					            	<a href="#">Filter</a>
+								</li>
+								<li class="nav-item" data-section="Filter2Chart">
+					            	<a href="#">Filter2</a>
+								</li>
+								<li class="nav-item" data-section="IconsChart">
+					            	<a href="#">Icons</a>
 								</li>
 							</ul>
 			        	</div><!-- /.nav-collapse -->
@@ -100,6 +118,12 @@
 							brite.display("DragDrop",{},{parent:$("#reports-container")});
 						}else if(val == "GraphicsChart"){
 							brite.display("GraphicsChart",{},{parent:$("#reports-container")});
+						}else if(val == "FilterChart"){
+							brite.display("FilterChart",{},{parent:$("#reports-container")});
+						}else if(val == "Filter2Chart"){
+							brite.display("Filter2Chart",{},{parent:$("#reports-container")});
+						}else if(val == "IconsChart"){
+							brite.display("IconsChart",{},{parent:$("#reports-container")});
 						}
 					}
 				});

@@ -1,0 +1,57 @@
+<script id="tmpl-Filter2Chart" type="text/html">
+	<div class="Filter2Chart">
+		<canvas id="Filter2ChartCanvas" width="960" height="300"></canvas>
+		<table>
+        <td>
+        <table cellspacing="7" border="0" cellpadding="3">
+            <tr>
+                <th><div>Brightness:</div></th>
+                <td><div class="brightnessSlider"></div></td>
+            <td>
+                <th><div>Contrast:</div></th>
+                <td><div class="contrastSlider"></div></td>
+            </td>
+            </tr>
+            <tr>
+                <th><div>Hue:</div></th>
+                <td><div class="hueSlider"></div></td>
+
+            <td>
+                <th><div>Saturation:</div></th>
+                <td><div class="saturationSlider"></div></td>
+            </td>
+            </tr>
+        </table>
+        </td>
+        <td>
+            <table cellspacing="7" border="0" cellpadding="3">
+                <tr>
+                    <th rowspan="1" align="center">Blur:</th>
+                    <td>
+                        <div class="blurXSlider"></div>
+                    </td>
+                    <td>
+                        <div class="blurYSlider"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th><div>RGB:</div></th>
+                    <td>
+                        <div class="redChannelSlider"></div>
+                    </td>
+                    <td>
+                        <div class="greenChannelSlider"></div>
+
+                    </td>
+                    <td>
+                        <div class="blueChannelSlider"></div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </table>
+    <input type="button" id="resetBtn" name="resetBtn" value="Reset" />
+	</div>
+</script>
+
+
