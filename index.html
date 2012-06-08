@@ -36,6 +36,7 @@
 	<script type="text/javascript" src="js/Filter2Chart.js"></script>
 	<script type="text/javascript" src="js/IconsChart.js"></script>
 	<script type="text/javascript" src="js/Masks.js"></script>
+	<script type="text/javascript" src="js/Matrix.js"></script>
 	<!-- /Component JS Files -->
 
 </head>
@@ -84,6 +85,9 @@
 								<li class="nav-item" data-section="Masks">
 					            	<a href="#">Masks</a>
 								</li>
+								<li class="nav-item" data-section="Matrix">
+					            	<a href="#">Matrix</a>
+								</li>
 							</ul>
 			        	</div><!-- /.nav-collapse -->
 			      	</div><!-- /container -->
@@ -130,6 +134,8 @@
 							brite.display("IconsChart",{},{parent:$("#reports-container")});
 						}else if(val == "Masks"){
 							brite.display("Masks",{},{parent:$("#reports-container")});
+						}else if(val == "Matrix"){
+							brite.display("Matrix",{},{parent:$("#reports-container")});
 						}
 					}
 				});
